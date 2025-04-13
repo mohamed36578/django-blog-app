@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: django-blog-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn blogsite.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: blogsite.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False

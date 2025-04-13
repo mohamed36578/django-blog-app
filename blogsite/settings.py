@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-jf+g3lf74*!0uqwxm^@@=rmr@xtye+=7vua_(r4+in2&oa66do
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
+
 
 
 # Application definition
@@ -117,11 +118,8 @@ USE_TZ = True
 
 import os
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'dashboard'
 
 
 # Default primary key field type
